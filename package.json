@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-validate-commit-msg",     "homepage": "https://github.com/npmtest/node-npmtest-validate-commit-msg",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-validate-commit-msg.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [validate-commit-msg (v2.12.1)](https://github.com/kentcdodds/validate-commit-msg#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-validate-commit-msg.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-validate-commit-msg) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-validate-commit-msg.svg)](https://travis-ci.org/npmtest/node-npmtest-validate-commit-msg)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-validate-commit-msg",
+    "keywords": [
+        "coverage",
+        "test",
+        "validate-commit-msg"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_validate_commit_msg.js",
+    "name": "npmtest-validate-commit-msg",
+    "nameAlias": "npmtest_validate_commit_msg",
+    "nameOriginal": "npmtest-validate-commit-msg",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-validate-commit-msg.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
